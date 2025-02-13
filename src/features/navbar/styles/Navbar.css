@@ -1,53 +1,95 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar {
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .nav-wrapper {
   background: #ffffff;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  /* left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw; */
 }
 
 .nav-main {
   display: flex;
   justify-content: space-between;
   height: 64px;
- 
+  
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .nav-link {
-    padding: 8px 12px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-    
-    background: linear-gradient(to right, #c70000, #5e2c5d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: linear-gradient(to right, #c70000, #5e2c5d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
 
 .nav-link:hover {
-  color: #959a9e;
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Live link styling */
+.nav-link[href*="youtube"] {
+  background: none;
+  color: #c70000;
+  -webkit-text-fill-color: initial;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 2px solid #c70000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.nav-link[href*="youtube"]::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #c70000;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(199, 0, 0, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(199, 0, 0, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(199, 0, 0, 0);
+  }
 }
 
 .logo {
@@ -61,45 +103,89 @@
   justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+.logo:hover {
+  transform: scale(1.02);
 }
 
-/* @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-  
-    .hamburger-menu {
-      display: flex; 
-    }
-  
-    .dropdown {
-      width: 100%;
-      position: absolute;
-      top: 64px;
-      left: 0;
-    }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: center;
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background: #c70000;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 100;
   }
-  
-  @media (min-width: 769px) {
-    .hamburger-menu {
-      display: none; 
-    }
-  
-    .dropdown {
-      display: none !important;
-    }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
   }
-   */
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .search-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  /* Mobile Live link styling */
+  .nav-link[href*="youtube"] {
+    width: auto;
+    background: linear-gradient(to right, #c70000, #5e2c5d);
+    color: white;
+    -webkit-text-fill-color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+  }
+
+  .nav-link[href*="youtube"]::before {
+    background-color: white;
+  }
+
+  .logo {
+    width: 150px;
+    font-size: 14px;
+  }
+}

@@ -2,58 +2,92 @@
     position: relative;
     width: 300px;
     margin: 0 1rem;
-  }
-  
-  .search-form {
+}
+
+.search-form {
     display: flex;
     align-items: center;
     width: 100%;
-  }
-  
-  .search-input {
+}
+
+.search-input {
     width: 100%;
-    padding: 0.5rem 1rem;
-    padding-right: 2.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
+    padding: 0.75rem 1.2rem;
+    padding-right: 3rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 0.95rem;
     color: #1a202c;
     background-color: white;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .search-input:focus {
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
     outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-  }
-  
-  .search-button {
+    border-color:linear-gradient(to right, #c70000, #5e2c5d);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+    transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus::placeholder {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+.search-button {
     position: absolute;
-    right: 0.5rem;
+    right: 0.8rem;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    padding: 0.25rem;
+    padding: 0.5rem;
     cursor: pointer;
-    color: #4a5568;
+    color: #4a90e2;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .search-button:hover {
-    color: #2d3748;
-  }
-  
-  .search-active .search-input {
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    color:linear-gradient(to right, #c70000, #5e2c5d);
+}
+
+.search-active .search-input {
     width: 100%;
-  }
-  
-  @media (max-width: 768px) {
+    border-color: linear-gradient(to right, #c70000, #5e2c5d);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+}
+
+/* Add a subtle gradient background on hover */
+.search-container:hover .search-input {
+    background: linear-gradient(to right, #ffffff, #f8fafc);
+}
+
+/* Animation for the search icon */
+.search-button svg {
+    transition: all 0.3s ease;
+}
+
+.search-active .search-button svg {
+    transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
     .search-container {
-      width: 100%;
-      margin: 0.5rem 0;
+        width: 100%;
+        margin: 0.5rem 0;
     }
-  }
+    
+    .search-input {
+        font-size: 1rem;
+        padding: 0.875rem 1.2rem;
+    }
+}
