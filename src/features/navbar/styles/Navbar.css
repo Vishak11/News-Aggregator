@@ -10,7 +10,10 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  position: relative;
+  position: fixed; 
+  top: 0;
+  left: 0; 
+  z-index: 1000;
 }
 
 .nav-wrapper {
@@ -50,7 +53,6 @@
   transform: translateY(-1px);
 }
 
-/* Live link styling */
 .nav-link[href*="youtube"] {
   background: none;
   color: #c70000;
@@ -122,7 +124,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  align-self: center;
+  margin-left: auto;
+  position: relative;
 }
 
 .hamburger-line {
@@ -137,10 +140,11 @@
   .hamburger {
     display: flex;
     z-index: 100;
+    margin-right: 20px; 
   }
 
   .nav-links {
-    position: absolute;
+    position: fixed; 
     top: 64px;
     left: 0;
     flex-direction: column;
@@ -169,7 +173,6 @@
     padding: 12px 0;
   }
 
-  /* Mobile Live link styling */
   .nav-link[href*="youtube"] {
     width: auto;
     background: linear-gradient(to right, #c70000, #5e2c5d);

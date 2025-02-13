@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import '../styles/Navbar.css';
 import SearchBar from "../../search/components/Searchbar";
+import { NavItem } from "../types/Navbar";
+import '../styles/Navbar.css'
+import { NavLink } from "react-router-dom";
 
-interface NavItem {
-  label: string;
-  href: string;
-  isExternal?: boolean;
-  isLive?: boolean;
-}
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +13,22 @@ const Navbar: React.FC = () => {
     { label: "Sports", href: "/sports" },
     { label: "Business", href: "/business" },
     { label: "Politics", href: "/politics" },
-    { label: "Entertainment", href: "/entertainment" },
+    { label: "Science", href: "/science" },
     { label: "Technology", href: "/technology" },
-    { label: "Watch Live", href: "https://www.youtube.com/watch?v=YDfiTGGPYCk" ,isExternal: true}
+    { 
+      label: "Watch Live", 
+      href: "https://www.youtube.com/watch?v=YDfiTGGPYCk",
+      isExternal: true,
+      isLive: true 
+    }
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearch = (query: string) => {
+    console.log("Search query:", query);
   };
 
   return (
@@ -31,35 +36,47 @@ const Navbar: React.FC = () => {
       <div className="nav-wrapper">
         <div className="nav-main">
           <div className="logo">ABC NEWS</div>
-          
-          <button className="hamburger" onClick={toggleMenu}>
+
+          <button
+            className={`hamburger ${isMenuOpen ? "active" : ""}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
           </button>
 
-          <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-           
-            <div className="search-container">
-              <SearchBar/>
-            </div>
-            {primaryNavItems.map((item) => (
-              <a
-              key={item.label}
-              href={item.href}
-              className={`nav-link ${item.isLive ? "live" : ""}`}
-              target={item.isExternal ? "_blank" :""}
-              rel={item.isExternal ? "noopener noreferrer":""}
-            >
-              {item.isLive && <span className="live-dot"></span>}
-              {item.label}
-            </a>
-            ))}
+          <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+            <SearchBar onSearch={handleSearch} />
+
+            {primaryNavItems.map((item) =>
+              item.isExternal ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="nav-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.href}
+                  to={item.href}
+                  className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+                >
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </div>
         </div>
       </div>
     </nav>
   );
 };
+
 
 export default Navbar;
