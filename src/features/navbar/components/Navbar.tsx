@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="nav-wrapper">
         <div className="nav-main">
-          <div className="logo">ABC NEWS</div>
+          <div className="logo"><h2>Prime News</h2></div>
 
           <button
             className={`hamburger ${isMenuOpen ? "active" : ""}`}
