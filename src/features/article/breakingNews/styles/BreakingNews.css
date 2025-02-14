@@ -1,4 +1,3 @@
-/* BreakingNews.css */
 .breaking-news-container {
     
     max-width: 1000px;
@@ -8,18 +7,17 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
   
-  /* Header Styles */
   .breaking-news-header {
     display: flex;
     align-items: center;
     margin-bottom: 16px;
-    background-color: #fff; /* Add background color */
-    padding: 8px 0; /* Add some padding */
+    background-color: #fff; 
+    padding: 8px 0; 
   }
   
   .breaking-news-header h2 {
     color: #e33d26;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
@@ -31,7 +29,6 @@
     font-weight: bold;
   }
   
-  /* Main Carousel Styles */
   .main-stories-carousel {
     margin-bottom: 1.5rem;
     position: relative;
@@ -86,7 +83,6 @@
     max-width: 800px;
   }
   
-  /* Category and Metadata Styles */
   .category {
     display: inline-block;
     background-color: #e33d26;
@@ -112,12 +108,11 @@
     font-weight: 500;
   }
   
-  /* Carousel Navigation Styles */
   .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 100; /* Increase z-index */
+    z-index: 100; 
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -147,7 +142,6 @@
     right: 16px;
   }
   
-  /* Slider Dots Styles */
   .slick-dots {
     position: absolute;
     bottom: 16px;
@@ -199,7 +193,6 @@
     opacity: 1;
   }
   
-  /* Sub Stories Grid Styles */
   .sub-stories {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -252,7 +245,6 @@
     margin-top: 8px;
   }
   
-  /* Loading State Styles */
   .loading-spinner {
     text-align: center;
     padding: 40px;
@@ -260,7 +252,6 @@
     color: #666;
   }
   
-  /* Error State Styles */
   .error-message {
     text-align: center;
     padding: 40px;
@@ -277,14 +268,12 @@
     cursor: pointer;
   }
   
-  /* Empty State Styles */
   .empty-message {
     text-align: center;
     padding: 40px;
     color: #666;
   }
   
-  /* Responsive Styles */
   @media (max-width: 768px) {
     .breaking-news-container {
       padding: 12px;
@@ -321,7 +310,6 @@
     }
   }
   
-  /* Print Styles */
   @media print {
     .breaking-news-container {
       max-width: 100%;
