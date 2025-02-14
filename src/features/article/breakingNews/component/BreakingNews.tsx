@@ -7,6 +7,24 @@ import { ChevronLeft, ChevronRight, RefreshCcw } from "lucide-react";
 import { NewsArticle } from "../types/NewsArticle";
 import { BreakingNewsProps } from "../types/BreakingNewsPropType";
 
+const NextArrow = (props: any) => {
+  const { className, onClick } = props;
+  return (
+    <div className={`carousel-arrow next ${className}`} onClick={onClick}>
+      <ChevronRight size={20} />
+    </div>
+  );
+};
+
+const PrevArrow = (props: any) => {
+  const { className, onClick } = props;
+  return (
+    <div className={`carousel-arrow prev ${className}`} onClick={onClick}>
+      <ChevronLeft size={20} />
+    </div>
+  );
+};
+
 const BreakingNews: React.FC<BreakingNewsProps> = ({
   articles,
   isLoading,
@@ -91,8 +109,8 @@ const BreakingNews: React.FC<BreakingNewsProps> = ({
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
-    nextArrow: <ChevronRight size={20} className="carousel-arrow next" />,
-    prevArrow: <ChevronLeft size={20} className="carousel-arrow prev" />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     fade: true,
     lazyLoad: 'progressive' as const
   };
@@ -100,7 +118,7 @@ const BreakingNews: React.FC<BreakingNewsProps> = ({
   return (
     <div className="breaking-news-container">
       <div className="breaking-news-header">
-        <h2>Breaking News</h2>
+        <h2>Latest News</h2>
         <span className="arrow">›</span>
       </div>
 

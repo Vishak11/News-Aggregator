@@ -1,6 +1,6 @@
 import React from "react";
 import BreakingNews from "../../../features/article/breakingNews/component/BreakingNews";
-import useFetchNews from '../../CommonHook/fetchNewsHook'
+import useFetchNews from '../../../common/CommonHook/fetchNewsHook'
 
 const Science: React.FC = () => {
   const { articles, isLoading, error } = useFetchNews("Science");
