@@ -15,6 +15,8 @@ const Navbar: React.FC = () => {
     { label: "Politics", href: "/politics" },
     { label: "Science", href: "/science" },
     { label: "Technology", href: "/technology" },
+    { label: "My news", href: "/mynews" },
+
     { 
       label: "Watch Live", 
       href: "https://www.youtube.com/watch?v=YDfiTGGPYCk",

@@ -1,4 +1,4 @@
-export const getNewsOrgData = async (section: string) => {
+export const getCommonNews = async (section: string) => {
   const API_KEY = "1lSywsc298AqmrefkgZkF5UVztFAOkaO";
   const BASE_URL = "https://api.nytimes.com/svc/topstories/v2";
 

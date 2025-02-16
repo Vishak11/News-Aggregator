@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchPage from "../../../features/article/SearchNews/component/SearchPage";
-import { searchNews } from '../services/SearchApi';
+import { searchNews } from '../../../common/CommonService/SearchApi';
 import { SearchResults } from '../types/SearchResult';
 
-const PreferencePage: React.FC = () => {
+const SearchResult: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -50,4 +50,4 @@ const PreferencePage: React.FC = () => {
   );
 };
 
-export default PreferencePage;
+export default SearchResult;

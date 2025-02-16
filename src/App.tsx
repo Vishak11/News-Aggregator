@@ -6,7 +6,8 @@ import Business from './pages/Business/component/Business';
 import Politics from './pages/Politics/component/Politics';
 import Science from './pages/Science/component/Science';
 import Technology from './pages/Technology/component/Technology';
-import PreferencePage from './pages/Preference/component/PreferencePage';
+import SearchResult from './pages/SearchResult/component/SearchResult';
+import MyNews from './pages/MyNews/component/MyNews';
 
 
 
@@ -21,7 +22,8 @@ function App() {
         <Route path="/politics" element={<Politics />} />
         <Route path="/science" element={<Science />} />
         <Route path="/technology" element={<Technology />} />
-        <Route path="/search" element={<PreferencePage />} />
+        <Route path="/search" element={<SearchResult />} />
+        <Route path="/mynews" element={<MyNews />} />
         
 
       </Routes>

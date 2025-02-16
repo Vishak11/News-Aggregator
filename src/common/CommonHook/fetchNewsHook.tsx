@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getNewsOrgData } from "../CommonService/NewsOrgApi";
+// import { getCommonNews } from "../CommonService/NewsOrgApi";
+import {getCommonNews}from '../CommonService/NewsOrgApi'
 import { NewsArticle } from "../../features/article/breakingNews/types/NewsArticle";
 
 const useFetchNews = (section: string) => {
@@ -13,7 +14,7 @@ const useFetchNews = (section: string) => {
         setIsLoading(true);
         setError(null);
         
-        const data = await getNewsOrgData(section);
+        const data = await getCommonNews(section);
         
         setArticles(data.results || []); 
       } catch (err) {
