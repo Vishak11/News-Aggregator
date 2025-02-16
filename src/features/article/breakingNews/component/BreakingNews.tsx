@@ -34,6 +34,7 @@ const BreakingNews: React.FC<BreakingNewsProps> = ({
   const [hoveredStoryId, setHoveredStoryId] = useState<string | null>(null);
 
   const getImageUrl = useCallback((article: NewsArticle) => {
+    console.log(hoveredStoryId)
     const image = article.multimedia?.find(
       (m) => m.format === "threeByTwoSmallAt2X"
     );
