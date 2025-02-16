@@ -29,7 +29,7 @@ const MyNews: React.FC = () => {
   }
 
   if (error) {
-    return <div style={{marginTop:"70px"}}  className="error">Error: {error}</div>;
+    return <div style={{marginTop:"70px"}}  className="error"> {error}</div>;
   }
 
   return (

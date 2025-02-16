@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const primaryNavItems: NavItem[] = [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "/home" },
     { label: "Sports", href: "/sports" },
     { label: "Business", href: "/business" },
     { label: "Politics", href: "/politics" },

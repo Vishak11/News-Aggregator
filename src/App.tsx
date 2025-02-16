@@ -1,5 +1,5 @@
 import Navbar from '../src/features/navbar/components/Navbar'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/Home/component/Home';
 import Sports from './pages/Sports/component/Sports';
 import Business from './pages/Business/component/Business';
@@ -16,7 +16,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home/>} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/sports" element={<Sports/>} />
         <Route path="/business" element={<Business />} />
         <Route path="/politics" element={<Politics />} />

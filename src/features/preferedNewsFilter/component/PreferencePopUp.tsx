@@ -10,7 +10,7 @@ const PreferencesPopup: React.FC<PreferencesPopupProps> = ({ onClose, onSave }) 
     { id: 'environment', label: 'Environment', selected: false },
     { id: 'business', label: 'Business', selected: false },
     { id: 'sports', label: 'Sports', selected: false },
-    { id: 'culture', label: 'Culture', selected: false }
+    { id: 'Education', label: 'Education', selected: false }
   ];
 
   const [categories, setCategories] = useState<Category[]>([]);

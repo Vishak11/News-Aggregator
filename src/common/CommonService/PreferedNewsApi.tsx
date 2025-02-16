@@ -44,7 +44,7 @@ export const preferedNewsApi = async (): Promise<NewsArticle[]> => {
   );
 
   if (userKeywords.length === 0) {
-    throw new Error("No keywords found in localStorage.");
+    throw new Error("No filter selected.Please select your filter from the home page to view your prefered news.");
   }
 
   const searchQuery: string = userKeywords
